@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Series</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let serie of series">
+      <ion-thumbnail slot="start">
+        <img [src]="'https://api-dev.akayamedia.com/images/' + serie.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ serie.name }}</h2>
+        <p>Total chapters: {{ serie.total_chapters }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadSeries($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando más series...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

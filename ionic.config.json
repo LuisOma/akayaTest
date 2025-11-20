@@ -1,0 +1,7 @@
+{
+  "name": "akayaTest",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
